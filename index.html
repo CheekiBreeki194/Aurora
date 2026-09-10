@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aurora — Najem prostorov za dogodke</title>
+<title>Najem prostorov za dogodke</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -16,6 +16,11 @@
     --ink:#2E2B33;
     --ink-soft:#6B6774;
     --line:#E4DED4;
+    --olive:#9CA36B;
+    --olive-deep:#767D48;
+    --oker:#D3A24C;
+    --oak:#CBA877;
+    --oak-light:#E4CBA0;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -40,7 +45,7 @@
   /* NAV */
   header{
     position:sticky; top:0; z-index:50;
-    background:rgba(251,248,244,0.9);
+    background:rgba(119,136,115,0.92);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
@@ -57,15 +62,15 @@
     display:flex; align-items:center; gap:10px;
   }
   .logo-mark{
-    width:28px; height:28px;
-    border-radius:9px;
+    width:36px; height:36px;
+    border-radius:11px;
     background:linear-gradient(135deg, var(--sage) 45%, var(--lavender) 100%);
     flex-shrink:0;
   }
   .nav-links{
     display:flex; gap:36px;
     font-size:0.95rem;
-    color:var(--ink-soft);
+    color:var(--ink);
   }
   .nav-links a:hover{color:var(--ink);}
   .nav-cta{
@@ -156,7 +161,7 @@
   .hero-photo.p1{
     width:72%; height:66%;
     top:0; right:0;
-    background:linear-gradient(160deg, var(--sage) 0%, #A6BC9E 100%);
+    background:linear-gradient(160deg, var(--oak) 0%, var(--olive) 100%);
   }
   .hero-photo.p2{
     width:58%; height:48%;
@@ -183,7 +188,7 @@
 
   .space-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr;
     gap:28px;
   }
   .space-card{
@@ -201,8 +206,9 @@
     height:220px;
     display:flex; align-items:flex-end; padding:18px;
   }
-  .space-photo.one{background:linear-gradient(150deg, var(--sage) 0%, #A6BC9E 100%);}
+  .space-photo.one{background:linear-gradient(150deg, var(--oak) 0%, var(--olive) 100%);}
   .space-photo.two{background:linear-gradient(150deg, var(--lavender) 0%, #C9BBDD 100%);}
+  .space-photo.three{background:linear-gradient(150deg, var(--peach) 0%, #EAC7A8 100%);}
   .space-tag{
     background:rgba(255,255,255,0.85);
     padding:6px 14px; border-radius:100px;
@@ -310,23 +316,25 @@
 
 <header>
   <nav>
-    <div class="logo"><span class="logo-mark"></span>Studio Prostor</div>
+    <div class="logo"><span class="logo-mark"></span></div>
     <div class="nav-links">
+      <a href="index.html#top">Domov</a>
       <a href="#spaces">Prostori</a>
       <a href="aurora.html">Aurora</a>
       <a href="lumina.html">Lumina</a>
+      <a href="lorena.html">Lorena</a>
       <a href="#contact">Kontakt</a>
     </div>
     <a href="#contact" class="nav-cta">Preveri termine</a>
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap hero-inner">
     <div>
-      <div class="eyebrow">Dva prostora, na voljo po dnevih</div>
+      <div class="eyebrow">Trije prostori, na voljo po dnevih</div>
       <h1>Najemi prostor,<br>ki ustreza <em>tvojemu</em> trenutku.</h1>
-      <p>Dva svetla prostora za delavnice, fotografiranje in manjša druženja. Preveri, kaj je prosto ta teden, in rezerviraj v nekaj klikih.</p>
+      <p>Trije svetli prostori za delavnice, fotografiranje, praznovanja in manjša druženja. Preveri, kaj je prosto ta teden, in rezerviraj v nekaj klikih.</p>
       <div class="hero-actions">
         <a href="#spaces" class="btn-primary">Poglej prostora</a>
         <a href="#contact" class="btn-secondary">Postavi vprašanje</a>
@@ -342,8 +350,8 @@
 <section class="spaces" id="spaces">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Prostora</div>
-      <h2>Dva prostora, dve različni vzdušji</h2>
+      <div class="eyebrow">Prostori</div>
+      <h2>Trije prostori, tri različna vzdušja</h2>
       <p>Vsak prostor ima svoj značaj, svoj urnik in svojo stran s fotografijami in vsemi podrobnostmi.</p>
     </div>
     <div class="space-grid">
@@ -371,6 +379,18 @@
           <a href="lumina.html" class="space-link">Poglej fotografije in urnik</a>
         </div>
       </div>
+      <div class="space-card">
+        <div class="space-photo three"><span class="space-tag">Lorena</span></div>
+        <div class="space-body">
+          <h3>Lorena</h3>
+          <p>Začasen opis — topel, ustvarjalen prostor za praznovanja in snemanja, kjer je pomembna atmosfera. Zamenjaj z resničnim besedilom, ko bo na voljo.</p>
+          <div class="space-meta">
+            <span>Do 20 oseb</span>
+            <span>Nastavljiva osvetlitev</span>
+          </div>
+          <a href="lorena.html" class="space-link">Poglej fotografije in urnik</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -382,7 +402,7 @@
       <p>Začasno besedilo — kratek odstavek o tem, kdo upravlja prostor in zakaj se gostje vračajo. Tukaj vstavi resnično zgodbo.</p>
     </div>
     <div class="about-stats">
-      <div class="stat"><div class="num">2</div><div class="label">Prostora na voljo</div></div>
+      <div class="stat"><div class="num">3</div><div class="label">Prostori na voljo</div></div>
       <div class="stat"><div class="num">7</div><div class="label">Dni v tednu</div></div>
       <div class="stat"><div class="num">24h</div><div class="label">Potrditev rezervacije</div></div>
       <div class="stat"><div class="num">100%</div><div class="label">Urnik v realnem času</div></div>
@@ -414,7 +434,7 @@
       </div>
       <div>
         <label for="space">Kateri prostor?</label>
-        <input type="text" id="space" placeholder="Aurora, Lumina ali še nisi prepričan/a">
+        <input type="text" id="space" placeholder="Aurora, Lumina, Lorena ali še nisi prepričan/a">
       </div>
       <div>
         <label for="message">Sporočilo</label>
@@ -427,7 +447,7 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Aurora</div>
+    <div>© 2026</div>
     <div>Začasno besedilo v nogi — naslov, povezave do družbenih omrežij ali majhen logotip.</div>
   </div>
 </footer>
