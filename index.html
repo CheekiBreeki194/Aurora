@@ -2,7 +2,7 @@
 <html lang="sl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Najem prostorov za dogodke</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -86,13 +86,34 @@
 
   /* HERO */
   .hero{
-    padding:88px 0 64px;
+    position:relative;
+    padding:120px 0 96px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-image: url('AuroraSlika1.jpg');
+  background-size: cover;
+  background-position:center;
+}
+  
+  .hero-bg::after{
+    /* "zasenčena" - darkening overlay for readability */
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(20, 22, 16, 0.5);
   }
   .hero-inner{
     display:grid;
     grid-template-columns:1.1fr 0.9fr;
     gap:56px;
     align-items:center;
+    position:relative;
+    z-index:1;
   }
   .eyebrow{
     font-size:0.8rem;
@@ -108,18 +129,26 @@
     width:22px; height:1px;
     background:var(--sage-deep);
   }
+  .hero .eyebrow{
+    color:var(--oak-light);
+  }
+  .hero .eyebrow::before{
+    background:var(--oak-light);
+  }
   .hero h1{
     font-size:clamp(2.4rem, 4.2vw, 3.6rem);
     line-height:1.08;
     margin-bottom:22px;
+    color:#fff;
+    text-shadow:0 2px 24px rgba(0,0,0,0.25);
   }
   .hero h1 em{
     font-style:italic;
-    color:var(--sage-deep);
+    color:var(--oak-light);
   }
   .hero p{
     font-size:1.08rem;
-    color:var(--ink-soft);
+    color:rgba(255,255,255,0.86);
     max-width:440px;
     margin-bottom:32px;
   }
@@ -128,8 +157,8 @@
   }
   .btn-primary{
     padding:14px 28px;
-    background:var(--ink);
-    color:var(--cream);
+    background:var(--cream);
+    color:var(--ink);
     border-radius:100px;
     font-size:0.95rem;
     font-weight:500;
@@ -139,14 +168,15 @@
   .btn-primary:hover{transform:translateY(-2px);}
   .btn-secondary{
     padding:14px 28px;
-    border:1px solid var(--ink);
+    border:1px solid rgba(255,255,255,0.7);
+    color:#fff;
     border-radius:100px;
     font-size:0.95rem;
     font-weight:500;
     transition:background 0.2s;
     display:inline-block;
   }
-  .btn-secondary:hover{background:rgba(0,0,0,0.04);}
+  .btn-secondary:hover{background:rgba(255,255,255,0.12);}
 
   .hero-visual{
     position:relative;
@@ -156,7 +186,7 @@
     position:absolute;
     border-radius:24px;
     overflow:hidden;
-    box-shadow:0 30px 60px -20px rgba(46,43,51,0.25);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.45);
   }
   .hero-photo.p1{
     width:72%; height:66%;
@@ -330,13 +360,15 @@
 </header>
 
 <section class="hero" id="top">
+  <div class="hero-bg"></div>
   <div class="wrap hero-inner">
     <div>
       <div class="eyebrow">Trije prostori, na voljo po dnevih</div>
       <h1>Najemi prostor,<br>ki ustreza <em>tvojemu</em> trenutku.</h1>
-      <p>Trije svetli prostori za delavnice, fotografiranje, praznovanja in manjša druženja. Preveri, kaj je prosto ta teden, in rezerviraj v nekaj klikih.</p>
+      <p>Prostori namenjeni druženju ljudi z željo po osebni rasti, dobrem počutju ali alternativnem zdravljenju,
+morda pa samo z željo po druženju in preživljanju časa v dobri družbi s podobno mislečimi ljudmi. Preveri, kaj je prosto ta teden, in rezerviraj v nekaj klikih.</p>
       <div class="hero-actions">
-        <a href="#spaces" class="btn-primary">Poglej prostora</a>
+        <a href="#spaces" class="btn-primary">Poglej prostore</a>
         <a href="#contact" class="btn-secondary">Postavi vprašanje</a>
       </div>
     </div>
@@ -352,16 +384,18 @@
     <div class="section-head">
       <div class="eyebrow">Prostori</div>
       <h2>Trije prostori, tri različna vzdušja</h2>
-      <p>Vsak prostor ima svoj značaj, svoj urnik in svojo stran s fotografijami in vsemi podrobnostmi.</p>
+      <p>Vsi naši prostori so namenjeni vsem izvajalcem različnih vadb, tečajev, dogodkov, tretmajev, treningov,
+svetovanj ali predavanj.</p>
     </div>
     <div class="space-grid">
       <div class="space-card">
         <div class="space-photo one"><span class="space-tag">Aurora</span></div>
         <div class="space-body">
           <h3>Aurora</h3>
-          <p>Začasen opis — svetel, odprt prostor, idealen za delavnice in manjše skupine. Zamenjaj z resničnim besedilom, ko bodo fotografije in podrobnosti pripravljene.</p>
+          <p>Večnamenski prostor AURORA je prostoren in svetel prostor v pritličju samostojne hiše, v Ljubljani,
+neposredno pod Golovcem.</p>
           <div class="space-meta">
-            <span>Do 12 oseb</span>
+            <span>70m2</span>
             <span>Naravna svetloba</span>
           </div>
           <a href="aurora.html" class="space-link">Poglej fotografije in urnik</a>
@@ -371,9 +405,10 @@
         <div class="space-photo two"><span class="space-tag">Lumina</span></div>
         <div class="space-body">
           <h3>Lumina</h3>
-          <p>Začasen opis — bolj miren, intimen prostor, primeren za sestanke in individualne termine. Zamenjaj z resničnim besedilom, ko bo na voljo.</p>
+          <p>Večnamenski prostor LUMINA je prostoren in svetel prostor v pritličju samostojne hiše, v Ljubljani,
+neposredno pod Golovcem.</p>
           <div class="space-meta">
-            <span>Do 6 oseb</span>
+            <span>55m2</span>
             <span>Tih kotiček</span>
           </div>
           <a href="lumina.html" class="space-link">Poglej fotografije in urnik</a>
@@ -383,10 +418,10 @@
         <div class="space-photo three"><span class="space-tag">Lorena</span></div>
         <div class="space-body">
           <h3>Lorena</h3>
-          <p>Začasen opis — topel, ustvarjalen prostor za praznovanja in snemanja, kjer je pomembna atmosfera. Zamenjaj z resničnim besedilom, ko bo na voljo.</p>
+          <p>Ponujamo vam najem manjšega udobnega in sproščujočega terapevtskega prostora LORENA.</p>
           <div class="space-meta">
-            <span>Do 20 oseb</span>
-            <span>Nastavljiva osvetlitev</span>
+            <span>18m2</span>
+            <span>Udobje</span>
           </div>
           <a href="lorena.html" class="space-link">Poglej fotografije in urnik</a>
         </div>
